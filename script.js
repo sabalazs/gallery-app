@@ -18,11 +18,32 @@ let imagesData = [{
     photo: "./images/spirit_island.png",
     title: "Spirit Island",
     description: "Spirit Island is a complex and thematic cooperative game about defending your island home from colonizing Invaders"
-}]
+}];
 
-let currentPhoto = 0;
+let currentPhoto = 3;
 
-$('#photo').attr("src", imagesData[currentPhoto].photo);
-$('#title').text(imagesData[currentPhoto].title);
-$('#description').text(imagesData[currentPhoto].description);
+const loadPhoto = (photoNumber) => {
+    $('#photo').attr("src", imagesData[photoNumber].photo);
+    $('#title').text(imagesData[photoNumber].title);
+    $('#description').text(imagesData[photoNumber].description);
+}
 
+loadPhoto(currentPhoto);
+
+$('#left').click(() => {
+    if (currentPhoto > 0) {
+        currentPhoto--;
+    } else {
+        currentPhoto = imagesData.length - 1;
+    }    
+    loadPhoto(currentPhoto);
+});
+
+$('#right').click(() => {
+    if (currentPhoto < 4) {
+        currentPhoto++;
+    } else {
+        currentPhoto = 0;
+    }    
+    loadPhoto(currentPhoto);
+});
