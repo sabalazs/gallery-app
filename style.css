@@ -23,7 +23,7 @@ main {
     flex-basis: 88%;    
     max-height: 100%;
     max-width: 100%;
-    background-color: silver;
+    background-color: rgb(255, 255, 255);
     justify-content: center;
     position: relative;
     /* margin: auto; */
@@ -80,7 +80,23 @@ main {
 }
 
 .thumbnail {
-    background-color: rebeccapurple;
+    position: relative;
+}
+
+.thumbnail_title {
+    position: absolute;
+    bottom: 105%;
+    background-color: gray;
+    display: none;
+    margin: auto;
+}
+
+.thumbnail img {
     height: 100px;
     width: auto;
+    box-shadow: 0px 5px 10px grey;
+}
+
+.thumbnail:hover .thumbnail_title {
+    display: block;
 }

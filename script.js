@@ -21,6 +21,17 @@ let imagesData = [{
 }];
 
 
+//creating thumbnails
+imagesData.forEach((element, index) => {
+    $('#thumbnail_container').append(`
+        <div class="thumbnail" data-index=${index}>
+            <img src=${element.photo} alt=${element.title} data-index=${index}>
+            <div class="thumbnail_title">${element.title}</div>
+        </div>
+    `);
+});
+
+
 //function to show slected image
 const loadPhoto = (photoNumber) => {
     $('#photo').attr("src", imagesData[photoNumber].photo);
@@ -30,16 +41,15 @@ const loadPhoto = (photoNumber) => {
     //make the info div the same width as the current image
     $(".info").width($("#photo").width()+"px");
     //$(".info").css("display","block");
+
+    //highlighting selected thumbnail
+    $('.thumbnail').css('border', 'none');
+    $(`.thumbnail[data-index=${photoNumber}]`).css('border', '3px solid gray');
 }
 
 //initial view
 let currentPhoto = 0;
 loadPhoto(currentPhoto);
-
-// creating thumbnails
-imagesData.forEach((element, index) => {
-    $('#thumbnail_container').append(`<img class="thumbnail" src=${element.photo} alt=${element.title} data-index=${index}>`);
-});
 
 
 // navigation events
