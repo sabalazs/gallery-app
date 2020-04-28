@@ -1,0 +1,68 @@
+#view_area {
+    display: flex;
+    width: 800px;
+    height: 400px;
+    margin: auto;
+    margin-top: 10%;
+    box-shadow: 0px 5px 10px grey;
+}
+
+.nav_arrow {
+    flex-basis: 6%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#image_container {
+    flex-basis: 88%;
+    background-color: silver;
+}
+
+#another_container {
+    max-height: 100%;
+    max-width: 100%;
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: red;
+}
+
+#image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    min-height: 18%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    font-family: "Roboto";
+
+}
+
+.rotated {
+    transform: rotate(0.5turn);
+}
+
+.title {
+    margin-left: 6%;
+    margin-top: 2%;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.description {
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 1%;
+}
