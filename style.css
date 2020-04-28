@@ -1,8 +1,12 @@
+main {
+    width: 800px;
+    margin: auto;
+
+}
+
 #view_area {
     display: flex;
-    width: 800px;
-    height: 600px;
-    margin: auto;
+    height: 400px;
     margin-top: 10%;
     box-shadow: 0px 5px 10px grey;
 }
@@ -16,25 +20,23 @@
 }
 
 #image_container {
-    flex-basis: 88%;
-    background-color: silver;
-}
-
-#another_container {
+    flex-basis: 88%;    
     max-height: 100%;
     max-width: 100%;
-    width: fit-content;
-    margin: auto;
-    display: flex;
+    background-color: silver;
     justify-content: center;
     position: relative;
-    background-color: red;
+    /* margin: auto; */
+    display: flex;
 }
 
 #photo {
     max-height: 100%;
     max-width: 100%;
-    object-fit: contain;
+    /* width: auto; */
+    /* height: 100%; */
+    /* object-fit: contain; */
+    background-color: silver;
 }
 
 .info {
@@ -46,7 +48,7 @@
     opacity: 0.8;
     color: white;
     font-family: "Roboto";
-
+    /* display: none; */
 }
 
 .rotated {
@@ -54,15 +56,31 @@
 }
 
 #title {
-    margin-left: 6%;
-    margin-top: 2%;
+    margin-left: 3%;
+    margin-top: 3%;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 0;
 }
 
 #description {
-    margin-left: 6%;
-    margin-right: 6%;
+    margin-left: 3%;
+    margin-right: 3%;
     margin-top: 1%;
+    font-size: 0.8rem;
+}
+
+#thumbnail_container {
+    margin-top: 20px;
+    background-color: white;
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.thumbnail {
+    background-color: rebeccapurple;
+    height: 100px;
+    width: auto;
 }

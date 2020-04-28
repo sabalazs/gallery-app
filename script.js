@@ -20,16 +20,29 @@ let imagesData = [{
     description: "Spirit Island is a complex and thematic cooperative game about defending your island home from colonizing Invaders"
 }];
 
-let currentPhoto = 3;
 
+//function to show slected image
 const loadPhoto = (photoNumber) => {
     $('#photo').attr("src", imagesData[photoNumber].photo);
     $('#title').text(imagesData[photoNumber].title);
     $('#description').text(imagesData[photoNumber].description);
+    
+    //make the info div the same width as the current image
+    $(".info").width($("#photo").width()+"px");
+    //$(".info").css("display","block");
 }
 
+//initial view
+let currentPhoto = 0;
 loadPhoto(currentPhoto);
 
+// creating thumbnails
+imagesData.forEach((element, index) => {
+    $('#thumbnail_container').append(`<img class="thumbnail" src=${element.photo} alt=${element.title} data-index=${index}>`);
+});
+
+
+// navigation events
 $('#left').click(() => {
     if (currentPhoto > 0) {
         currentPhoto--;
@@ -46,4 +59,8 @@ $('#right').click(() => {
         currentPhoto = 0;
     }    
     loadPhoto(currentPhoto);
+});
+
+$('.thumbnail').click(() => {
+    loadPhoto($(event.target).attr('data-index'));
 });
