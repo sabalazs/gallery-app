@@ -26,7 +26,7 @@ imagesData.forEach((element, index) => {
     $('#thumbnail_container').append(`
         <div class="thumbnail" data-index=${index}>
             <img src=${element.photo} alt=${element.title} data-index=${index}>
-            <div class="thumbnail_title">${element.title}</div>
+            <div class="thumbnail_title_cont"><div class="thumbnail_title">${element.title}</div></div>
         </div>
     `);
 });
@@ -43,8 +43,8 @@ const loadPhoto = (photoNumber) => {
     //$(".info").css("display","block");
 
     //highlighting selected thumbnail
-    $('.thumbnail').css('border', 'none');
-    $(`.thumbnail[data-index=${photoNumber}]`).css('border', '3px solid gray');
+    $('.thumbnail img').css('border', 'none');
+    $(`.thumbnail[data-index=${photoNumber}] img`).css('border', '3px solid gray');
 }
 
 //initial view
