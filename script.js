@@ -37,15 +37,18 @@ const loadPhoto = (photoNumber) => {
     $('#photo').attr("src", imagesData[photoNumber].photo);
     $('#title').text(imagesData[photoNumber].title);
     $('#description').text(imagesData[photoNumber].description);
-    
-    //make the info div the same width as the current image
-    $(".info").width($("#photo").width()+"px");
-    //$(".info").css("display","block");
-
+     
     //highlighting selected thumbnail
     $('.thumbnail img').css('border', 'none');
     $(`.thumbnail[data-index=${photoNumber}] img`).css('border', '3px solid gray');
 }
+
+//make the info div the same width as the current image
+document.getElementById("photo").onload = () => {
+    $(".info").width($("#photo").width()+"px");
+    $(".info").css("display","block");
+}
+
 
 //initial view
 let currentPhoto = 0;
